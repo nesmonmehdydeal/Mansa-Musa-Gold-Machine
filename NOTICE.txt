@@ -1,0 +1,7 @@
+This project is a derivative thematic reskin inspired by:
+Serkanbyx/claw-machine — https://github.com/Serkanbyx/claw-machine
+
+Original license observed from the source repository:
+MIT License Copyright (c) 2025 Serkanby
+
+Please retain attribution and the applicable MIT license notice if you reuse substantial portions of the original source or this derivative package.
