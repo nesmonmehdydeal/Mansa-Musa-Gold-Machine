@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mansa Musa Gold Machine</title>
+  <meta name="description" content="A mobile-first animated claw game themed around gold, learning, trade, and royal treasures." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="sky-orb orb-a"></div>
+    <div class="sky-orb orb-b"></div>
+    <div class="background-particles" id="backgroundParticles"></div>
+    <div class="cloud cloud-a"></div>
+    <div class="cloud cloud-b"></div>
+  </div>
+
+  <div class="app-shell">
+    <header class="card hero">
+      <p class="eyebrow">Animated mobile-first edition</p>
+      <h1>Mansa Musa Gold Machine</h1>
+      <p class="subtitle">
+        Position the royal claw, seize treasures of gold, scholarship, and trade,
+        and complete the collection tray.
+      </p>
+
+      <div class="hud-grid">
+        <div class="chip">
+          <span>Collected</span>
+          <strong><span id="score">0</span> / <span id="total">0</span></strong>
+        </div>
+        <div class="chip">
+          <span>Status</span>
+          <strong id="statusText">Ready</strong>
+        </div>
+        <button id="resetBtn" class="secondary-btn">Reset</button>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      <section class="card machine-card">
+        <div class="machine-topbar">
+          <p class="marquee">Golden Caravan Arcade</p>
+          <p class="microcopy">Tap inside the machine or use the slider to steer.</p>
+        </div>
+
+        <div id="machine" class="machine" aria-label="Mansa Musa Gold Machine play area">
+          <div class="machine-backdrop" aria-hidden="true">
+            <div class="sun-halo"></div>
+            <div class="sparkle-field" id="sparkleField"></div>
+            <div class="dune dune-back"></div>
+            <div class="dune dune-mid"></div>
+            <div class="dune dune-front"></div>
+            <div class="caravan">▲ ▲ ▲</div>
+          </div>
+
+          <div class="glass-shine"></div>
+          <div class="rail"></div>
+
+          <div id="clawCarriage" class="claw-carriage" aria-hidden="true">
+            <div id="clawLine" class="claw-line"></div>
+            <div id="claw" class="claw">
+              <span class="arm center"></span>
+              <span class="arm left"></span>
+              <span class="arm right"></span>
+            </div>
+          </div>
+
+          <div id="playfield" class="playfield"></div>
+        </div>
+
+        <div class="tray-panel">
+          <div class="tray-header">
+            <span>Royal Collection Tray</span>
+            <strong id="trayCount">0 collected</strong>
+          </div>
+          <div id="collectionTray" class="collection-tray"></div>
+        </div>
+      </section>
+
+      <aside class="side-stack">
+        <section class="card controls-card sticky-controls">
+          <label for="steerRange" class="control-label">Steer the claw</label>
+          <input id="steerRange" class="steer-range" type="range" min="0" max="100" value="10" />
+
+          <div class="button-row">
+            <button id="leftBtn" class="secondary-btn icon-btn" aria-label="Move left">◀</button>
+            <button id="dropBtn" class="primary-btn drop-btn">Drop</button>
+            <button id="rightBtn" class="secondary-btn icon-btn" aria-label="Move right">▶</button>
+          </div>
+
+          <p class="controls-note">
+            Keyboard: <strong>←</strong> <strong>→</strong> and <strong>Space</strong>.
+            Mobile: drag the slider or tap the machine to reposition.
+          </p>
+        </section>
+
+        <section class="card legend-card">
+          <div class="section-head">
+            <h2>Treasure set</h2>
+            <p>All items drift gently, so timing matters.</p>
+          </div>
+          <div id="legendGrid" class="legend-grid"></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="card footer-card">
+      <p>
+        Courtesy: adapted as a derivative concept from
+        <a href="https://github.com/Serkanbyx/claw-machine" target="_blank" rel="noreferrer">Serkanbyx/claw-machine</a>.
+      </p>
+    </footer>
+  </div>
+
+  <div id="winOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="overlay-card">
+      <p class="eyebrow">Victory</p>
+      <h2>The treasury is complete.</h2>
+      <p>You collected every treasure from the Mansa Musa Gold Machine.</p>
+      <p class="overlay-note">
+        Courtesy: inspired by
+        <a href="https://github.com/Serkanbyx/claw-machine" target="_blank" rel="noreferrer">Serkanbyx/claw-machine</a>,
+        published under the MIT License.
+      </p>
+      <button id="playAgainBtn" class="primary-btn">Play again</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
